@@ -1,26 +1,105 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 231 67% 94.1%; /* #E8EAF6 Very Light Blue */
+    --foreground: 230 20% 15%; /* Dark Slate Blue for text */
+
+    --card: 231 67% 98%; 
+    --card-foreground: 230 20% 15%;
+
+    --popover: 231 67% 98%;
+    --popover-foreground: 230 20% 15%;
+
+    --primary: 231 48.4% 47.8%; /* #3F51B5 Deep Blue */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 231 50% 88%; 
+    --secondary-foreground: 231 40% 30%;
+
+    --muted: 231 50% 92%;
+    --muted-foreground: 230 30% 45%;
+
+    --accent: 288 41.9% 59.6%; /* #BA68C8 Vivid Violet */
+    --accent-foreground: 0 0% 100%; /* White */
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 231 40% 85%;
+    --input: 231 40% 90%;
+    --ring: 231 48.4% 47.8%; /* Ring color same as primary */
+
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+
+    --sidebar-background: 231 30% 30%;
+    --sidebar-foreground: 230 60% 90%;
+    
+    --sidebar-primary: 231 48.4% 57.8%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    
+    --sidebar-accent: 288 41.9% 69.6%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    
+    --sidebar-border: 231 30% 40%;
+    --sidebar-ring: 231 48.4% 57.8%;
+  }
+
+  .dark {
+    --background: 230 20% 10%; 
+    --foreground: 230 60% 90%;
+
+    --card: 230 20% 12%; 
+    --card-foreground: 230 60% 90%;
+
+    --popover: 230 20% 12%;
+    --popover-foreground: 230 60% 90%;
+
+    --primary: 231 55% 65%; 
+    --primary-foreground: 230 20% 10%;
+
+    --secondary: 230 25% 20%;
+    --secondary-foreground: 230 50% 80%;
+
+    --muted: 230 25% 18%;
+    --muted-foreground: 230 40% 60%;
+
+    --accent: 288 50% 70%;
+    --accent-foreground: 230 20% 10%;
+    
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 20% 25%;
+    --input: 230 20% 22%;
+    --ring: 231 55% 65%;
+
+    --sidebar-background: 230 20% 8%;
+    --sidebar-foreground: 230 60% 85%; 
+    
+    --sidebar-primary: 231 55% 60%; 
+    --sidebar-primary-foreground: 0 0% 100%;
+    
+    --sidebar-accent: 288 50% 65%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    
+    --sidebar-border: 230 20% 15%;
+    --sidebar-ring: 231 55% 60%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
